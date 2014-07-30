@@ -24,17 +24,31 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jquerymobile/tyler311.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jquerymobile/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jquerymobile/jquery.mobile.structure-1.4.3.css" />
+        <script type="text/javascript" src="lib/jquerymobile/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="lib/jquerymobile/jquery.mobile-1.4.3.js"></script>
         <meta name="msapplication-tap-highlight" content="no" />
-        <title>Hello World</title>
+        <title>Tyler 311</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+      
+        <div data-role="header" style="overflow:hidden;">
+            <h1>I'm a header</h1>
+            
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#">One</a></li>
+                    <li><a href="#">Two</a></li>
+                    <li><a href="#">Three</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /header -->
+        <form>
+            <label for="slider-2">Slider (default is "false"):</label>
+            <input type="range" name="slider-2" id="slider-2" data-highlight="true" min="0" max="100" value="50">
+        </form>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
