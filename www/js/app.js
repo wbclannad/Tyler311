@@ -1,4 +1,4 @@
-var baseUrl = "http://localhost/RequestPortal-WebAPI/api/";
+var baseUrl = "http://10.8.24.53/RequestPortal-WebAPI/api/";
 
 var tenant = "Tyler311";
 

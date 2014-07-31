@@ -1,0 +1,23 @@
+ <div data-role="dialog" data-corners="false" data-close-btn="none">
+        <div data-role="header" id="header" data-position="fixed">                        
+            <h1 id="detailHeader">Description</h1>        
+            <a id="closeAddDescription" href="#" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right">Done</a>
+        </div>
+        
+        <div class="ui-content">
+            <div class="ui-field-contain">
+                <label for="location">Add Description</label>
+                <textarea cols="40" rows="20" name="description" id="description" data-mini="true" data-corners="false"></textarea>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                $( '#closeAddDescription' ).click(function(){
+                    request.Description = $("#description").val();
+                    $('[data-role=dialog]').dialog( "close" );
+                })
+            });
+        </script>
+</div>

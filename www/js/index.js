@@ -52,7 +52,7 @@ $( document ).ready(function() {
     //something.style.cursor = 'pointer';
     addRequestDiv.onclick = function() {
         event.preventDefault();
-        location.hash = "addPhoto";
+        location.hash = "addRequestType";
         mapInit();
         
     };

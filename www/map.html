@@ -40,20 +40,56 @@
         </div><!-- /page -->
         
         <div data-role="page" id="addRequestType">
+            <div data-role="header" style="overflow:hidden;" id="header" data-position="fixed">
+                <h1>Request Type</h1>
+                
+                <a href="#main" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all">Home</a>
+            </div><!-- /header -->
             
+            <div class="pageContent" class="ui-content">
+                <ul data-role="listview" data-inset="true" id = "requestTypeList"></ul>
+            </div>
+
         </div><!-- /page -->
         
         <div data-role="page" id="addPhoto">
-            
+            <!--
             <div class="ui-grid-a"  id="addPhotoDiv">
                 <div class="ui-block-a"><div id="addFromLibraryDiv"  class="ui-bar ui-bar-a" style=" text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/stack-of-photos-xl.png">Library</div></div>
                 <div class="ui-block-b"><div id="takePhotoDiv" class="ui-bar ui-bar-a" style=" text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/camera-xl.png">Take Photo</div></div>
-            </div><!-- /grid-a -->
+            </div>
             <img id="photoImg" width="100%" height="400px" src="" hidden="true"/>
   
             <div id="mapDiv" width="100%" height="400px"></div>
- 
+            -->
         </div><!-- /page -->
+        <div data-role="page" id="requestDetailPage">
+            <div data-role="header" style="overflow:hidden;" id="header" data-position="fixed">
+                <a href="#addRequestType" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left">Back</a>
+                <h1 id="detailHeader">Request Type Name</h1>
+                <a href="#" id="submitBtn" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right">Submit</a>
+            </div><!-- /header -->
+            
+            <div class="ui-content">
+                <div class="pageContent">
+                    <a href="addLocation.html" data-icon="plus" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="flip">Location</a>
+               
+                    <a href="addDescription.html" data-icon="plus" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="flip">Description</a>
+               
+                    <a href="addContact.html" data-icon="plus" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="flip">Contact</a>
+                </div>
+                
+                
+                <div class="ui-grid-a"  id="addPhotoDiv">
+                    <div class="ui-block-a"><div id="addFromLibraryDiv"  class="ui-bar ui-bar-a" style=" text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/stack-of-photos-xl.png">Library</div></div>
+                    <div class="ui-block-b"><div id="takePhotoDiv" class="ui-bar ui-bar-a" style=" text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/camera-xl.png">Take Photo</div></div>
+                </div><!-- /grid-a -->
+                <img id="photoImg" width="100%" height="400px" src="" hidden="true"/>
+                
+                <div id="mapDiv" width="100%" height="400px"></div>
+            </div>
+            
+        </div>
 
         
        
@@ -68,6 +104,8 @@
             <script type="text/javascript" src="http://js.arcgis.com/3.8compact"></script>
             <script type="text/javascript" src="cordova.js"></script>
             <script type="text/javascript" src="js/index.js"></script>
+            <script type="text/javascript" src="js/app.js"></script>
+            <script type="text/javascript" src="js/requestType.js"></script>
             <script>
                 var app = {
                     // Application Constructor
