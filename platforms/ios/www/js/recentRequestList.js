@@ -10,6 +10,6 @@ $(document).ready(function(){
 		      $("#recentRequestList").append(listItem);
 		});
 
-		$("#recentRequestList").listview("refresh");
+		//$("#recentRequestList").listview("refresh");
 
 });
