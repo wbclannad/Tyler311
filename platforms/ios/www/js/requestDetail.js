@@ -4,8 +4,10 @@ $(document).ready(function(){
 
 	$('#submitBtn').click(function(e){
 		console.log(request);
-		//submmit request
-		
+
+		requestList.push(request);
+
+		//submmit request		
 		var postUrl = baseUrl + tenant + "/Request";
 
 		$.ajax({

@@ -56,6 +56,12 @@ $( document ).ready(function() {
         mapInit();
         
     };
+    document.getElementById('recentRequestDiv').onclick = function() {
+        event.preventDefault();
+        location.hash = "recentRequests";
+       
+
+    };
                     
     document.getElementById('addFromLibraryDiv').onclick = function() {
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
