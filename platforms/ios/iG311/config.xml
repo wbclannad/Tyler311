@@ -19,9 +19,6 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
-    <feature name="Device">
-        <param name="ios-package" value="CDVDevice" />
-    </feature>
     <feature name="Geolocation">
         <param name="ios-package" value="CDVLocation" />
     </feature>
@@ -55,6 +52,6 @@
         Apache Cordova Team
     </author>
     <preference name="DisallowOverscroll" value="true" />
-    <content src="index.html" />
+    <content src="map.html" />
     <access origin="*" />
 </widget>

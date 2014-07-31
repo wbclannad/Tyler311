@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jquerymobile/tyler311.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jquerymobile/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jquerymobile/jquery.mobile.structure-1.4.3.css" />
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+
+        <script type="text/javascript" src="lib/jquerymobile/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="lib/jquerymobile/jquery.mobile-1.4.3.js"></script>
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>Tyler 311</title>
+    </head>
+    <body>
+    
+    <!-- content section -->      
+    <div data-role="page" id="requestDetailPage">
+        <div data-role="header" style="overflow:hidden;" id="header" data-position="fixed">            
+            <a href="#" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left">Home</a>
+            <h1 id="detailHeader">Request Type Name</h1>        
+            <a href="#" id="submitBtn" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right">Submit</a>
+        </div><!-- /header -->
+
+        <div class="ui-content">
+            <div class="pageContent">
+                <a href="addLocation.html" data-icon="plus" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="flip">Location</a>
+            </div>
+
+            <div class="pageContent">
+                <a href="addDescription.html" data-icon="plus" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="flip">Description</a>
+            </div>
+
+            <div class="pageContent">
+                <a href="addContact.html" data-icon="plus" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="flip">Contact</a>
+            </div>
+        </div>
+
+    </div>
+        
+       
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/requestDetail.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

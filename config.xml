@@ -8,6 +8,6 @@
         Apache Cordova Team
     </author>
     <preference name="DisallowOverscroll" value="true"/>
-    <content src="index.html" />
+    <content src="map.html" />
     <access origin="*" />
 </widget>

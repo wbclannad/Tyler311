@@ -27,6 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        
     },
     // deviceready Event Handler
     //
@@ -34,16 +35,52 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        mapInit();
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
         console.log('Received Event: ' + id);
+        mapInit();
     }
 };
+
+
+$( document ).ready(function() {
+    var addRequestDiv = document.getElementById('addRequestDiv');
+    
+    //something.style.cursor = 'pointer';
+    addRequestDiv.onclick = function() {
+        event.preventDefault();
+        location.hash = "addPhoto";
+        mapInit();
+        
+    };
+                    
+    document.getElementById('addFromLibraryDiv').onclick = function() {
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+                                    sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
+                                    destinationType: Camera.DestinationType.DATA_URL
+                                    });
+    };
+    document.getElementById('takePhotoDiv').onclick = function() {
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+                                    destinationType: Camera.DestinationType.DATA_URL
+                                    });
+    };
+   
+  
+});
+
+function onSuccess(imageData) {
+    var image = document.getElementById('photoImg');
+    image.src = "data:image/jpeg;base64," + imageData;
+    
+    $('#addPhotoDiv').hide();
+    $('#photoImg').show();
+}
+
+function onFail(message) {
+    //alert('Failed because: ' + message);
+}
+

@@ -27,35 +27,130 @@
         <link rel="stylesheet" type="text/css" href="lib/jquerymobile/tyler311.css" />
         <link rel="stylesheet" type="text/css" href="lib/jquerymobile/jquery.mobile.icons.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jquerymobile/jquery.mobile.structure-1.4.3.css" />
+        
+        <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
+            
         <script type="text/javascript" src="lib/jquerymobile/jquery-1.11.1.js"></script>
         <script type="text/javascript" src="lib/jquerymobile/jquery.mobile-1.4.3.js"></script>
+        <script src="//js.arcgis.com/3.10/"></script>
+        
         <meta name="msapplication-tap-highlight" content="no" />
         <title>Tyler 311</title>
     </head>
     <body>
+<<<<<<< HEAD
       
+      <div data-role="page" id="main">
+          <div data-role="header" ><img width="100%" src="img/tyler.gif"></a></div>
+          <div data-role="content" style="padding:2px">
+              <div class="ui-grid-a">
+                  <div class="ui-block-a"><div id="addRequestDiv" class="ui-bar ui-bar-a" style="height:140px; text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/add-list-xl.png">New Request</div></div>
+                  <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:140px; text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/star-xl.png">Followed</div></div>
+              </div><!-- /grid-a -->
+              <div class="ui-grid-a">
+                  <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:140px; text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/time-12-xl.png">Recent</div></div>
+                  <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:140px; text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/twitter-xl.png">Twitter</div></div>
+              </div><!-- /grid-a -->
+=======
+        
         <div data-role="header" style="overflow:hidden;">
             <h1>I'm a header</h1>
+>>>>>>> FETCH_HEAD
             
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
-                </ul>
-            </div><!-- /navbar -->
-        </div><!-- /header -->
-        <form>
-            <label for="slider-2">Slider (default is "false"):</label>
-            <input type="range" name="slider-2" id="slider-2" data-highlight="true" min="0" max="100" value="50">
-        </form>
+          </div><!-- /content -->
+          <div data-role="footer" data-position="fixed">
+              <div data-role="navbar">
+                  <ul>
+                      <li class="ui-block-a"><a href="#" data-icon="grid" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-iconpos="top" data-theme="a" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">My Info</span><span class="ui-icon ui-icon-grid ui-icon-shadow">&nbsp;</span></span></a></li>
+                      <li class="ui-block-b"><a href="#" data-icon="star" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-iconpos="top" data-theme="a" data-inline="true"><span class="ui-btn-inner"><span class="ui-btn-text">City Info</span><span class="ui-icon ui-icon-star ui-icon-shadow">&nbsp;</span></span></a></li>
+                      <li class="ui-block-c"><a href="#" data-icon="gear" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-iconpos="top" data-theme="a" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">Settings</span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></a></li>
+                  </ul>
+              </div><!-- /navbar -->
+          </div>
+      </div><!-- /page -->
+      
+      <div data-role="page" id="addRequestType">
+          
+       </div><!-- /page -->
+      
+      <div data-role="page" id="addPhoto">
+          
+          <div class="ui-grid-a">
+          <div class="ui-block-a"><div id="addFromLibraryDiv"  class="ui-bar ui-bar-a" style="height:140px; text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/stack-of-photos-xl.png">Library</div></div>
+          <div class="ui-block-b"><div id="takePhotoDiv" class="ui-bar ui-bar-a" style="height:140px; text-align:center"><img width="90%" style="margin-left:10px; margin-top:7px" src="img/camera-xl.png">Take Photo</div></div>
+          </div><!-- /grid-a -->
+          <img id="photoImg" width="100%" height="200px" style="object-fit:contain" src=""/>
+          <div>
+              <div id="mapDiv" style="margin:0; width:100%; height:400px;">
+                  
+              </div>
+          </div>
+      </div><!-- /page -->
+      <div data-role="page" id="recentRequest">
+          
+      </div><!-- /page -->
+
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            $.support.cors = true;
-            $.mobile.buttonMarkup.hoverDelay;
-            $.mobile.allowCrossDomainPages;
+            var mapInit = function(){
+                alert("Did I called");
+                console.log("Loading ArcGIS...");
+                require(["esri/map","esri/symbols/PictureMarkerSymbol","esri/graphic",
+                         "esri/SpatialReference",
+                         "esri/geometry/Point",
+                         "dojo/on","dojo/domReady!"],
+                        function(Map,PictureMarkerSymbol,Graphic,SpatialReference,Point,on) {
+                        // Create map
+                        var map = new Map("mapDiv",{
+                                          basemap: "streets",
+                                          center: [-98.6, 39.8],
+                                          zoom: 3
+                                          });
+                        
+                        // Wait until map has loaded before starting geolocation
+                        map.on("load",startGeolocation);
+                        
+                        // Create the marker symbol
+                        var markerSymbol = new PictureMarkerSymbol({
+                                                                   "angle":0,
+                                                                   "xoffset":0,
+                                                                   "yoffset":0,
+                                                                   "type":"esriPMS",
+                                                                   "url":"images/green-pin.png",
+                                                                   "width":35,
+                                                                   "height":35
+                                                                   })
+                        
+                        function startGeolocation(){
+                        console.log("Starting geolocation...");
+                        navigator.geolocation.getCurrentPosition(locationSuccess,locationError,{setHighAccuracy:true});
+                        }
+                        
+                        // Handle location success
+                        function locationSuccess(position){
+                        if(position.coords.latitude != null || position.coords.longitude != null){
+                        console.log("long: " + position.coords.longitude + ", lat: " + position.coords.latitude);
+                        var wgsPt = new Point(position.coords.longitude,position.coords.latitude, new SpatialReference({wkid:4326})); 
+                        map.graphics.add(new Graphic(wgsPt, markerSymbol));
+                        map.centerAndZoom(wgsPt, 12);
+                        }
+                        }
+                        
+                        function locationError(err){
+                        console.log("locationError: " + err.toString());
+                        }
+                        
+                        }
+                        );       
+            }
+        
             app.initialize();
+            $.support.cors = true;
+            $.mobile.buttonMarkup.hoverDelay= true;
+            $.mobile.allowCrossDomainPages =true;
+            $.mobile.defaultPageTransition ="slide";
         </script>
     </body>
 </html>
