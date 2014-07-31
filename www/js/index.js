@@ -68,8 +68,7 @@ $( document ).ready(function() {
                                     destinationType: Camera.DestinationType.DATA_URL
                                     });
     };
-   
-  
+                    
 });
 
 function onSuccess(imageData) {

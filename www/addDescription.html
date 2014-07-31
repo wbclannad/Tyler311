@@ -13,9 +13,12 @@
 
         <script type="text/javascript">
             $(document).ready(function(){
-                
+                $("#description").val(request.Description);
                 $( '#closeAddDescription' ).click(function(){
+                                                  
                     request.Description = $("#description").val();
+                    
+                    $('#descriptionLink').text(request.description);
                     $('[data-role=dialog]').dialog( "close" );
                 })
             });

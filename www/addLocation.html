@@ -13,8 +13,10 @@
 
         <script type="text/javascript">
             $(document).ready(function(){
+                if(request.ManualLocations)
+                              $("#location").val(request.ManualLocations[0]["Address"]);
                 $( '#closeAddLocation' ).click(function(){
-
+                                               
                     request.ManualLocations = [];
                     request.ManualLocations.push( {Address: $("#location").val()} );
                     console.log(request);
