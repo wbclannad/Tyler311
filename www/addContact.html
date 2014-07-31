@@ -1,0 +1,21 @@
+ <div data-role="dialog" data-corners="false" data-close-btn="none">
+        <div data-role="header" id="header" data-position="fixed">                        
+            <h1 id="detailHeader">Contact</h1>        
+            <a id="closeAddContact" href="#" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right">Done</a>
+        </div>
+        
+        <div class="ui-content">
+            <div class="ui-field-contain">
+                <label for="location">Add Contact</label>
+                <textarea cols="40" rows="20" name="contact" id="contact" data-mini="true" data-corners="false"></textarea>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $( '#closeAddContact' ).click(function(){
+                    $('[data-role=dialog]').dialog( "close" );
+                })
+            });
+        </script>
+</div>
